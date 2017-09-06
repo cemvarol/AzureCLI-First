@@ -1,0 +1,86 @@
+CLI First tries
+
+https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-vm
+
+https://docs.microsoft.com/en-us/azure/virtual-machines/linux/multiple-nics?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-a-vm
+
+
+https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-network-interface-vm
+
+
+
+az network nic create \
+--resource-group Fake \
+--name cvaz091701Nic3 \
+--vnet-name EUVNet \
+--subnet Production \
+--network-security-group Test-US-NSG
+
+
+
+az vm nic list -g Fake --vm-name test
+
+
+az vm nic add \
+--resource-group Fake \
+--vm-name test \
+--nics cvaz091701Nic3
+
+
+
+https://www.microsoft.com/en-us/download/details.aspx?id=19727
+
+
+2003 demo from microsoft
+·         Username:         Administrator
+
+·         Password:           Evaluation1
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+az vm nic list -g Fake --vm-name test
+
+
+az network nic create \ -g myResourceGroup -name cvaz091701Nic2 -vnet-name EUVNET -subnet Production -network-security-group test-US-NSG
+
+az network nic create -g Fake --vnet-name FAKE-Vnet --subnet Fake-Sub -n cvaz091701Nic2 --ip-forwarding --network-security-group test-US-NSG
+
+
+az vm nic add -g Fake --vm-name Test --nics nic_name1 nic_name2
+az vm nic add -g Fake --vm-name Test --nics cvaz091701Nic2 test-us-vm0172 us-test-vm01618
+
+
+esource /subscriptions/1141ba4b-33ed-4548-8f38-83302bd63010/resourceGroups/Fake/providers/Microsoft.Network/virtualNetworks/EUVNet/subnets/Production 
+referenced by resource /subscriptions/1141ba4b-33ed-4548-8f38-83302bd63010/resourceGroups/Fake/providers/Microsoft.Network/networkInterfaces/cvaz091701Nic2 was not found. 
+Please make sure that the referenced resource exists, and that both resources are in the same region.
+
+
+az network nic create -g Fake --vnet-name FAKE-Vnet --subnet MySubnet -n MyNic
+
+
+
+
+Virtual machine /subscriptions/1141ba4b-33ed-4548-8f38-83302bd63010/resourceGroups/Fake/providers/Microsoft.Compute/virtualMachines/test 
+with a single network interface must be stop-deallocated before it can be updated to have multiple network interfaces and vice-versa
+
+
+
+
+The number of network interfaces for virtual machine test exceeds the maximum allowed for the virtual machine size Standard_D2s_v3. 
+The number of network interfaces is 4 and the maximum allowed is 2.
+
+Virtual machine /subscriptions/1141ba4b-33ed-4548-8f38-83302bd63010/resourceGroups/Fake/providers/Microsoft.Compute/virtualMachines/test with a single network interface must be stop-deallocated before it can be updated to have multiple network interfaces and vice-versa.
+
+M /subscriptions/1141ba4b-33ed-4548-8f38-83302bd63010/resourceGroups/FAKE/providers/Microsoft.Compute/virtualMachines/test is currently stop-deallocating and 
+cannot be re-allocated during this period. Perform stop-deallocate of the VM /subscriptions/1141ba4b-33ed-4548-8f38-83302bd63010/resourceGroups/FAKE/providers/Microsoft.Compute/virtualMachines/test again or retry this operation in some time.
+
+
+
+**************************************************************************************************************************************************************************************************************************
+
+https://docs.microsoft.com/en-us/cli/azure/network/nic?view=azure-cli-latest#az_network_nic_create
+
+https://docs.microsoft.com/en-us/azure/virtual-machines/linux/multiple-nics?toc=%2fazure%2fvirtual-network%2ftoc.json#add-a-nic-to-a-vm
+
+https://docs.microsoft.com/en-us/cli/azure/vm/nic?toc=%2Fazure%2Fvirtual-network%2Ftoc.json&view=azure-cli-latest#az_vm_nic_add
