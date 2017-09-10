@@ -44,7 +44,7 @@ az vm nic list -g Fake --vm-name test
 
 az network nic create \ -g myResourceGroup -name cvaz091701Nic2 -vnet-name EUVNET -subnet Production -network-security-group test-US-NSG
 
-az network nic create -g Fake --vnet-name FAKE-Vnet --subnet Fake-Sub -n cvaz091701Nic2 --ip-forwarding --network-security-group test-US-NSG
+az network nic create -g Fake --vnet-name FAKE-Vnet --subnet Fake-Sub -n cvaz091701Nic2 --ip forwarding --network-security-group test-US-NSG
 
 
 az vm nic add -g Fake --vm-name Test --nics nic_name1 nic_name2
